@@ -20,8 +20,8 @@ async def add_history(
     """
     添加历史记录
     """
-    result=await history.add_history(db, user.id, data.newsId)
-
+    result=await history.add_history(db, user.id, data.news_id)
+    return success_response(message="添加成功")
 @router.get("/list")
 async def get_history_list(page: int = Query(1, ge=1),
                            page_size: int = Query(10, ge=1, le=100, alias="pageSize"),
